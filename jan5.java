@@ -63,8 +63,30 @@ public class jan5 {
 }
 
 class Calculator {
-  int num1;
-  int num2;
+  public static Calculator instance;
+
+  private int num1;
+  private int num2;
+
+  public Calculator() {
+    instance = this;
+  }
+
+  public int getNum1() {
+    return num1;
+  }
+
+  public int getNum2() {
+    return num2;
+  }
+
+  public void setNum1(int n) {
+    num1 = n;
+  }
+
+  public void setNum2(int n) {
+    num2 = n;
+  }
 
   public int add() {
     int sum = num1 + num2;

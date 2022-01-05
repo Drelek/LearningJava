@@ -1,21 +1,34 @@
+import java.util.Scanner;
+
 public class jan5 {
 
+  public static Scanner ki;
+
   public static void main(String[] args) {
-    // All of these should be the same
-    System.out.println(max3(1, 2, 3));
-    System.out.println(max3(3, 2, 1));
-    System.out.println(max3(2, 1, 3));
-    System.out.println(max3(1, 3, 2));
-    System.out.println(max3(2, 3, 1));
-    System.out.println(max3(3, 1, 2));
+    ki = new Scanner(System.in);
+
+    // Get user input
+    System.out.println("Please enter three numbers:");
+    double a = ki.nextDouble();
+    double b = ki.nextDouble();
+    double c = ki.nextDouble();
+
+    System.out.println("The max is " + max3(a, b, c));
 
     System.out.println("-----------------------------");
 
-    oneToN(10);
+    System.out.println("Enter a number:");
+    int n = ki.nextInt();
+    oneToN(n);
 
     System.out.println("-----------------------------");
 
-    loanPayments(10000, 1000, 0.05);
+    System.out
+        .println("Enter a loan principal amount, the monthly payment amount, and the interest rate as a decimal:");
+    int loan = ki.nextInt();
+    int emi = ki.nextInt();
+    double interestRate = ki.nextDouble();
+    loanPayments(loan, emi, interestRate);
   }
 
   public static double max3(double a, double b, double c) {
@@ -39,9 +52,9 @@ public class jan5 {
   public static void loanPayments(int loan, int emi, double interest) {
     int n = 0;
     while (loan > 0) {
-      loan += loan * interest;  // Calculate interest before payment
+      loan += loan * interest; // Calculate interest before payment
       loan -= emi; // Make payment
-      n++; // Keep track of payments
+      n++; // Keep track of pa ents
       System.out.println("Paying " + emi + " in installment " + n + ", principal left: " + loan);
     }
     System.out.println("Loan fully paid after " + n + " installments");

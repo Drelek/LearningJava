@@ -61,3 +61,13 @@ public class jan5 {
   }
 
 }
+
+class Calculator {
+  int num1;
+  int num2;
+
+  public int add() {
+    int sum = num1 + num2;
+    return sum;
+  }
+}
